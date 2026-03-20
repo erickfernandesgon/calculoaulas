@@ -15,17 +15,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1412;
-    --surface: #151c18;
-    --surface2: #1b2420;
-    --border: rgba(255,255,255,0.07);
-    --text: #f4f7f4;
-    --muted: #98a89f;
+    --bg: #0d0d14;
+    --surface: #13131e;
+    --surface2: #1a1a28;
+    --border: rgba(255,255,255,0.08);
+    --text: #f0efff;
+    --muted: #9896b8;
     --accent: #25D366;
     --accent-dark: #1ebe5d;
     --accent-glow: rgba(37,211,102,0.10);
     --wpp: #25D366;
     --wpp-dark: #1DA851;
+    --highlight: #7c6ff7;
+    --highlight-glow: rgba(124,111,247,0.15);
     --red: #ff6b6b;
     --yellow: #f4c15d;
   }
@@ -57,7 +59,7 @@
 
   /* ── TOP BAR ── */
   .topbar {
-    background: rgba(15,20,18,0.92);
+    background: rgba(13,13,20,0.93);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
     padding: 14px 24px;
@@ -88,12 +90,12 @@
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(37,211,102,0.08);
-    border: 1px solid rgba(37,211,102,0.22);
+    background: var(--highlight-glow);
+    border: 1px solid rgba(124,111,247,0.28);
     border-radius: 40px;
     padding: 6px 16px;
     font-size: 13px;
-    color: #7ee8a2;
+    color: #b0a8ff;
     letter-spacing: 0.04em;
     margin-bottom: 32px;
     animation: fadeUp .6s ease both;
@@ -116,8 +118,8 @@
 
   .hero-sub {
     font-size: clamp(16px, 2.2vw, 19px);
-    color: #b8c9be;
-    max-width: 580px;
+    color: #a8a6c8;
+    max-width: 560px;
     margin: 0 auto 40px;
     font-weight: 300;
     line-height: 1.7;
@@ -204,7 +206,7 @@
     padding: 28px 24px;
     transition: border-color .3s, transform .3s, background .3s;
   }
-  .pain-card:hover { border-color: rgba(37,211,102,0.18); background: #192019; transform: translateY(-2px); }
+  .pain-card:hover { border-color: rgba(124,111,247,0.22); background: #16162a; transform: translateY(-2px); }
   .pain-icon { font-size: 26px; margin-bottom: 14px; }
   .pain-card h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
@@ -258,11 +260,11 @@
     position: relative;
     transition: border-color .3s, transform .3s, box-shadow .3s;
   }
-  .package-card:hover { transform: translateY(-3px); border-color: rgba(37,211,102,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  .package-card:hover { transform: translateY(-3px); border-color: rgba(124,111,247,0.28); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
   .package-card.featured {
-    border-color: rgba(37,211,102,0.45);
-    background: linear-gradient(160deg, rgba(37,211,102,0.05) 0%, transparent 55%);
-    box-shadow: 0 4px 24px rgba(37,211,102,0.08);
+    border-color: rgba(124,111,247,0.5);
+    background: linear-gradient(160deg, rgba(124,111,247,0.07) 0%, transparent 55%);
+    box-shadow: 0 4px 24px rgba(124,111,247,0.1);
   }
   .featured-badge {
     position: absolute;
@@ -352,13 +354,13 @@
   .hero-chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; animation: fadeUp .6s .25s ease both; }
   .hero-chip {
     display: inline-flex; align-items: center; gap: 7px;
-    background: rgba(37,211,102,0.06);
-    border: 1px solid rgba(37,211,102,0.16);
+    background: rgba(124,111,247,0.08);
+    border: 1px solid rgba(124,111,247,0.2);
     border-radius: 40px;
     padding: 7px 18px;
     font-size: 13px;
     font-weight: 400;
-    color: #9dd9b5;
+    color: #b0a8ff;
     letter-spacing: 0.01em;
   }
   .hero-chip .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.8; }
@@ -375,9 +377,9 @@
     width: 180px; height: 180px;
     border-radius: 20px;
     object-fit: cover;
-    border: 2px solid rgba(37,211,102,0.2);
+    border: 2px solid rgba(124,111,247,0.25);
     display: block;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 6px rgba(37,211,102,0.04);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 0 0 6px rgba(124,111,247,0.05);
   }
   .about-text h2 { font-family: 'Syne', sans-serif; font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 14px; }
   .about-text h2 em { font-style: normal; color: var(--accent); }
@@ -395,7 +397,7 @@
     text-decoration: none;
     transition: border-color .25s, color .25s, background .25s;
   }
-  .social-link:hover { border-color: rgba(37,211,102,0.3); color: #9dd9b5; background: rgba(37,211,102,0.05); }
+  .social-link:hover { border-color: rgba(124,111,247,0.4); color: #b0a8ff; background: rgba(124,111,247,0.07); }
   .social-link svg { width: 16px; height: 16px; flex-shrink: 0; }
 
   /* ── FOOTER SOCIALS ── */
@@ -406,7 +408,7 @@
     display: inline-flex; align-items: center; gap: 5px;
     transition: color .25s;
   }
-  .footer-social:hover { color: #9dd9b5; }
+  .footer-social:hover { color: #b0a8ff; }
   .footer-social svg { width: 14px; height: 14px; }
 
   @media (max-width: 600px) {
@@ -438,7 +440,7 @@
     <div class="hero-badge">Vagas limitadas por semana</div>
     <h1>A matéria que você <em>não entende</em><br>tem uma explicação clara. Vamos encontrá-la.</h1>
     <p class="hero-sub">
-      Aulas particulares individuais de <strong>Economia, Cálculo, Estatística e Econometria</strong> — 100% online, com método direto, para você passar nas provas e entender a lógica de verdade.
+      Aulas de <strong>Economia, Cálculo, Estatística e Econometria</strong> — 100% online, individuais, para você entender de verdade e passar nas provas.
     </p>
     <div class="hero-actions">
       <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20quero%20agendar%20uma%20aula%20particular!" class="btn-wpp pulse" target="_blank" rel="noopener">
@@ -516,32 +518,32 @@
       <div class="pain-card">
         <div class="pain-icon">😵‍💫</div>
         <h3>Perdido na aula</h3>
-        <p>O professor avança rápido, você não acompanha, anota sem entender — e na hora da prova vem o branco.</p>
+        <p>O professor avança rápido, você não acompanha — e na prova vem o branco.</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon">📚</div>
-        <h3>Horas estudando, zero resultado</h3>
-        <p>Você lê o livro, assiste vídeo no YouTube, mas na hora de resolver um exercício diferente, trava.</p>
+        <h3>Estuda e não aprende</h3>
+        <p>Lê, assiste vídeo, mas na hora do exercício diferente, trava.</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon">😰</div>
         <h3>Prova chegando e pânico</h3>
-        <p>A semana de provas é terror. Você decora fórmulas sem saber o que está fazendo. O resultado aparece.</p>
+        <p>Decora fórmula sem entender. Na hora H, não resolve.</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon">🤯</div>
-        <h3>Econometria/Estatística em outro idioma</h3>
-        <p>Heterocedasticidade, autocorrelação, regressão múltipla — parece chinês, mas não precisa ser.</p>
+        <h3>Econometria em outro idioma</h3>
+        <p>Heterocedasticidade, regressão múltipla — parece chinês, mas não precisa ser.</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon">💸</div>
-        <h3>Cursinho caro, sem resultado</h3>
-        <p>Pagou monitor, comprou material, não adiantou. O problema era a explicação, não o seu esforço.</p>
+        <h3>Gastou, não resolveu</h3>
+        <p>Pagou monitor, comprou material. O problema era a explicação, não seu esforço.</p>
       </div>
       <div class="pain-card">
         <div class="pain-icon">🎓</div>
-        <h3>Nota que afeta sua carreira</h3>
-        <p>IRA, bolsa, intercâmbio, mercado financeiro — tem muito em jogo. Não dá pra arriscar.</p>
+        <h3>Nota que importa de verdade</h3>
+        <p>IRA, bolsa, intercâmbio, mercado financeiro. Não dá pra arriscar.</p>
       </div>
     </div>
   </div>
@@ -552,35 +554,35 @@
   <div class="container">
     <p class="section-label">O método</p>
     <h2 class="section-title">Direto ao ponto.<br>Sem enrolação.</h2>
-    <p class="section-body">Cada aula é construída em cima do que você especificamente não entende. Nada de aula genérica.</p>
+    <p class="section-body">Cada aula foca no que você não entende. Nada de revisão genérica.</p>
 
     <div class="method-steps">
       <div class="method-step">
         <div class="step-num">01</div>
         <div class="step-content">
-          <h3>Diagnóstico da sua dificuldade</h3>
-          <p>Antes de qualquer coisa, identifico exatamente onde está o buraco — não perco seu tempo revisando o que você já sabe.</p>
+          <h3>Entendo onde você travou</h3>
+          <p>Antes de tudo, identifico exatamente o buraco. Sem perder tempo no que você já sabe.</p>
         </div>
       </div>
       <div class="method-step">
         <div class="step-num">02</div>
         <div class="step-content">
-          <h3>Explicação que constrói autonomia</h3>
-          <p>Explico a lógica da matéria do zero, passo a passo, sem pular etapas. Você não vai apenas ver a resolução — vai entender por que cada etapa existe, o que te permite resolver qualquer variação do problema sozinho. O objetivo é que você não precise mais de mim.</p>
+          <h3>Explico a lógica, não a fórmula</h3>
+          <p>Passo a passo, sem pular etapas. Você entende o porquê — e consegue resolver qualquer variação sozinho.</p>
         </div>
       </div>
       <div class="method-step">
         <div class="step-num">03</div>
         <div class="step-content">
-          <h3>Prática com exercícios do seu curso</h3>
-          <p>Trabalho com as provas anteriores da sua faculdade, listas do seu professor e o material que você usa no dia a dia.</p>
+          <h3>Praticamos com exercícios do seu curso</h3>
+          <p>Provas antigas, listas do seu professor, material que você já usa.</p>
         </div>
       </div>
       <div class="method-step">
         <div class="step-num">04</div>
         <div class="step-content">
-          <h3>Resultado que aparece na prova</h3>
-          <p>Foco total em performance. Você sai de cada aula sabendo resolver — não apenas tendo assistido uma explicação.</p>
+          <h3>Você sai sabendo resolver</h3>
+          <p>Não só tendo assistido. Foco total em resultado na prova.</p>
         </div>
       </div>
     </div>
@@ -592,7 +594,7 @@
   <div class="container">
     <p class="section-label">Disciplinas</p>
     <h2 class="section-title">O que eu atendo</h2>
-    <p class="section-body">Matérias que a maioria dos universitários de negócios e sociais aplicadas precisam dominar.</p>
+    <p class="section-body">As matérias mais difíceis dos cursos de negócios e ciências sociais aplicadas.</p>
     <div class="subjects-grid">
       <span class="subject-chip">Microeconomia</span>
       <span class="subject-chip">Macroeconomia</span>
@@ -615,7 +617,7 @@
   <div class="container">
     <p class="section-label">Pacotes</p>
     <h2 class="section-title">Escolha seu pacote</h2>
-    <p class="section-body">Aulas 100% online, com horários sob consulta. Atendimento individual para alunos do Brasil e do exterior.</p>
+    <p class="section-body">100% online. Horários flexíveis. Brasil e exterior.</p>
 
     <div class="packages-grid">
 
@@ -687,7 +689,7 @@
 <section class="final-cta">
   <div class="container">
     <h2>Pronto pra <em>virar o jogo</em><br>na próxima prova?</h2>
-    <p>Manda uma mensagem agora. Primeira conversa sem compromisso — vejo como posso te ajudar.</p>
+    <p>Manda uma mensagem. Sem compromisso, sem enrolação.</p>
     <div class="final-cta-actions">
       <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20quero%20saber%20mais%20sobre%20as%20aulas%20particulares!" class="btn-wpp pulse" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
