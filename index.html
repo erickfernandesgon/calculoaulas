@@ -1,195 +1,721 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Erick Fernandes – Aulas Particulares</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erick Fernandes – Aulas Particulares de Economia, Cálculo, Estatística e Econometria</title>
+<meta name="description" content="Aulas particulares online de Economia, Cálculo, Estatística e Econometria com Erick Fernandes. Atendimento individual para universitários do Brasil e do exterior. Passe nas suas provas com explicações claras e método direto.">
+<meta name="keywords" content="aulas particulares economia, monitoria econometria, aulas online estatística, tutor cálculo universitário, aulas particulares FGV, Insper, USP, UFABC, Cambridge, NYU">
+<meta name="author" content="Erick Fernandes">
+<meta property="og:title" content="Erick Fernandes – Aulas Particulares Online de Economia e Estatística">
+<meta property="og:description" content="Atendimento individual, 100% online, para universitários do Brasil e do exterior. Econometria, Cálculo, Estatística e Microeconomia com explicações que fazem sentido.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://erickfernandes.com/">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1412;
+    --surface: #151c18;
+    --surface2: #1b2420;
+    --border: rgba(255,255,255,0.07);
+    --text: #f4f7f4;
+    --muted: #98a89f;
+    --accent: #25D366;
+    --accent-dark: #1ebe5d;
+    --accent-glow: rgba(37,211,102,0.10);
+    --wpp: #25D366;
+    --wpp-dark: #1DA851;
+    --red: #ff6b6b;
+    --yellow: #f4c15d;
+  }
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <style>
-    body {
-      font-family: "Inter", sans-serif;
-      background: #f6f7f3;
-      margin: 0;
-      color: #171c18;
-    }
+  html { scroll-behavior: smooth; }
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
 
-    header {
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
-    .btn {
-      background: #22c55e;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-    }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    .hero {
-      padding: 60px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
+  /* ── TOP BAR ── */
+  .topbar {
+    background: rgba(15,20,18,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topbar-logo { font-family: 'Syne', sans-serif; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); }
+  .topbar-logo span { color: var(--accent); }
+  .topbar-cta {
+    background: var(--wpp);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 7px;
+    transition: background .25s, box-shadow .25s;
+    box-shadow: 0 2px 12px rgba(37,211,102,0.18);
+  }
+  .topbar-cta:hover { background: var(--wpp-dark); box-shadow: 0 4px 18px rgba(37,211,102,0.28); }
+  .topbar-cta svg { width: 16px; height: 16px; fill: white; }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+  /* ── HERO ── */
+  .hero {
+    padding: 96px 0 80px;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(37,211,102,0.08);
+    border: 1px solid rgba(37,211,102,0.22);
+    border-radius: 40px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: #7ee8a2;
+    letter-spacing: 0.04em;
+    margin-bottom: 32px;
+    animation: fadeUp .6s ease both;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; opacity: 0.7; }
 
-    p {
-      color: #5e685f;
-    }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    animation: fadeUp .6s .1s ease both;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
 
-    .hero-card {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-    }
+  .hero-sub {
+    font-size: clamp(16px, 2.2vw, 19px);
+    color: #b8c9be;
+    max-width: 580px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+    line-height: 1.7;
+    animation: fadeUp .6s .2s ease both;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
 
-    .about {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 30px;
-      align-items: center;
-      margin-top: 40px;
-    }
+  .hero-actions { animation: fadeUp .6s .3s ease both; display: flex; flex-direction: column; align-items: center; gap: 14px; }
 
-    .about img {
-      width: 160px;
-      height: 160px;
-      border-radius: 20px;
-      object-fit: cover;
-    }
+  .btn-wpp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #25D366 0%, #1ebe5d 100%);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 18px 36px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform .25s, box-shadow .25s, filter .25s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.28);
+  }
+  .btn-wpp:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37,211,102,0.32);
+  }
+  .btn-wpp svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
+  .btn-wpp.pulse { animation: pulseGlow 2.6s infinite; }
 
-    .section {
-      margin-top: 60px;
-    }
+  .hero-scarcity {
+    font-size: 13px;
+    color: var(--yellow);
+    display: flex; align-items: center; gap: 6px;
+    justify-content: center;
+    opacity: 0.85;
+  }
+  .hero-scarcity::before { content: '◆'; font-size: 8px; }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
+  /* ── LOGOS ── */
+  .universities {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    text-align: center;
+  }
+  .universities p { font-size: 12px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+  .uni-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; }
+  .uni-tag {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px 14px;
+    letter-spacing: 0.06em;
+  }
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-    }
+  /* ── SECTIONS ── */
+  section { padding: 80px 0; }
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .section-body { color: var(--muted); font-size: 17px; max-width: 560px; }
 
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
+  /* ── PAIN SECTION ── */
+  .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 48px; }
+  .pain-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: border-color .3s, transform .3s, background .3s;
+  }
+  .pain-card:hover { border-color: rgba(37,211,102,0.18); background: #192019; transform: translateY(-2px); }
+  .pain-icon { font-size: 26px; margin-bottom: 14px; }
+  .pain-card h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .package {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-    }
+  /* ── METHOD SECTION ── */
+  .method-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .method-steps { margin-top: 48px; display: flex; flex-direction: column; gap: 0; }
+  .method-step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .method-step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .step-content h3 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .step-content p { color: var(--muted); font-size: 15px; }
 
-    footer {
-      margin-top: 50px;
-      padding: 20px 0;
-      text-align: center;
-      color: #777;
-    }
+  /* ── SUBJECTS ── */
+  .subjects-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+  .subject-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    transition: border-color .2s, color .2s;
+  }
+  .subject-chip:hover { border-color: var(--accent); color: var(--accent); }
 
-    @media(max-width: 800px){
-      .hero, .cards, .packages {
-        grid-template-columns: 1fr;
-      }
+  /* ── PACKAGES ── */
+  .packages-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 48px; }
+  .package-card {
+    background: var(--bg);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px;
+    padding: 32px 24px;
+    display: flex; flex-direction: column;
+    position: relative;
+    transition: border-color .3s, transform .3s, box-shadow .3s;
+  }
+  .package-card:hover { transform: translateY(-3px); border-color: rgba(37,211,102,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  .package-card.featured {
+    border-color: rgba(37,211,102,0.45);
+    background: linear-gradient(160deg, rgba(37,211,102,0.05) 0%, transparent 55%);
+    box-shadow: 0 4px 24px rgba(37,211,102,0.08);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent);
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .package-lessons {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .package-lessons span { font-size: 18px; font-weight: 400; color: var(--muted); }
+  .package-name { font-size: 14px; color: var(--muted); margin-bottom: 20px; font-style: italic; }
+  .package-perks { list-style: none; margin-bottom: 28px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .package-perks li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; color: var(--muted); }
+  .package-perks li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .package-cta {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: linear-gradient(135deg, #25D366 0%, #1ebe5d 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: filter .25s, transform .25s, box-shadow .25s;
+    box-shadow: 0 3px 14px rgba(37,211,102,0.2);
+  }
+  .package-cta:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.28); }
+  .package-cta svg { width: 18px; height: 18px; fill: white; }
+  .package-card.featured .package-cta { background: linear-gradient(135deg, #25D366 0%, #1ebe5d 100%); }
+  .package-card.featured .package-cta:hover { filter: brightness(1.1); }
 
-      .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-    }
-  </style>
+  /* ── SCARCITY BANNER ── */
+  .scarcity-banner {
+    background: linear-gradient(135deg, rgba(244,193,93,0.09), rgba(244,193,93,0.03));
+    border: 1px solid rgba(244,193,93,0.22);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex; align-items: center; gap: 20px;
+    margin-top: 40px;
+  }
+  .scarcity-icon { font-size: 28px; flex-shrink: 0; }
+  .scarcity-text h4 { font-family: 'Syne', sans-serif; font-size: 17px; color: var(--yellow); margin-bottom: 4px; }
+  .scarcity-text p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* ── FINAL CTA ── */
+  .final-cta { text-align: center; padding: 96px 0; }
+  .final-cta h2 { font-family: 'Syne', sans-serif; font-size: clamp(30px, 5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .final-cta h2 em { font-style: normal; color: var(--accent); }
+  .final-cta p { color: var(--muted); margin-bottom: 40px; font-size: 17px; }
+  .final-cta-actions { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.28); }
+    50% { box-shadow: 0 4px 28px rgba(37,211,102,0.48), 0 0 0 10px rgba(37,211,102,0); }
+  }
+
+  /* ── HERO CHIPS ── */
+  .hero-chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; animation: fadeUp .6s .25s ease both; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(37,211,102,0.06);
+    border: 1px solid rgba(37,211,102,0.16);
+    border-radius: 40px;
+    padding: 7px 18px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #9dd9b5;
+    letter-spacing: 0.01em;
+  }
+  .hero-chip .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; opacity: 0.8; }
+
+  /* ── ABOUT SECTION ── */
+  .about-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .about-inner {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .about-photo {
+    width: 180px; height: 180px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid rgba(37,211,102,0.2);
+    display: block;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 6px rgba(37,211,102,0.04);
+  }
+  .about-text h2 { font-family: 'Syne', sans-serif; font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .about-text h2 em { font-style: normal; color: var(--accent); }
+  .about-text p { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
+  .about-socials { display: flex; gap: 12px; flex-wrap: wrap; }
+  .social-link {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: border-color .25s, color .25s, background .25s;
+  }
+  .social-link:hover { border-color: rgba(37,211,102,0.3); color: #9dd9b5; background: rgba(37,211,102,0.05); }
+  .social-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ── FOOTER SOCIALS ── */
+  .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .footer-socials { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .footer-social {
+    color: var(--muted); text-decoration: none; font-size: 13px;
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: color .25s;
+  }
+  .footer-social:hover { color: #9dd9b5; }
+  .footer-social svg { width: 14px; height: 14px; }
+
+  @media (max-width: 600px) {
+    .topbar { padding: 12px 16px; }
+    .container { padding: 0 18px; }
+    .hero { padding: 72px 0 64px; }
+    .scarcity-banner { flex-direction: column; text-align: center; }
+    .method-step { grid-template-columns: 40px 1fr; gap: 14px; }
+    .step-num { font-size: 24px; }
+    .about-inner { grid-template-columns: 1fr; gap: 28px; }
+    .about-photo { width: 140px; height: 140px; margin: 0 auto; }
+  }
+</style>
 </head>
-
 <body>
 
-<header class="container">
-  <h3>Erick Fernandes</h3>
-  <a class="btn" href="https://wa.me/5511951668097">WhatsApp</a>
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-logo">Erick Fernandes<span>.</span></div>
+  <a href="https://wa.me/5511951668097?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20aula%20particular!" class="topbar-cta" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Chamar no WhatsApp
+  </a>
 </header>
 
-<section class="hero container">
-  <div>
-    <h1>A matéria pode ficar simples com a explicação certa</h1>
-    <p>Aulas de economia, cálculo e estatística com foco direto em prova.</p>
-    <a class="btn" href="https://wa.me/5511951668097">Agendar aula</a>
-  </div>
-
-  <div class="hero-card">
-    <h3>Você vai:</h3>
-    <ul>
-      <li>Entender a lógica</li>
-      <li>Resolver exercícios</li>
-      <li>Ganhar confiança</li>
-    </ul>
-  </div>
-</section>
-
-<!-- FOTO + SOBRE -->
-<section class="container about">
-  <img src="erick.jpg" alt="Erick Fernandes">
-
-  <div>
-    <h2>Sobre mim</h2>
-    <p>Sou formado em Economia e ajudo alunos a entenderem cálculo, estatística e econometria com clareza.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Vagas limitadas por semana</div>
+    <h1>A matéria que você <em>não entende</em><br>tem uma explicação clara. Vamos encontrá-la.</h1>
+    <p class="hero-sub">
+      Aulas particulares individuais de <strong>Economia, Cálculo, Estatística e Econometria</strong> — 100% online, com método direto, para você passar nas provas e entender a lógica de verdade.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20quero%20agendar%20uma%20aula%20particular!" class="btn-wpp pulse" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar com Erick no WhatsApp
+      </a>
+      <p class="hero-scarcity">Apenas 6 vagas disponíveis essa semana</p>
+    </div>
+    <div class="hero-chips">
+      <span class="hero-chip"><span class="dot"></span>Aulas 100% online</span>
+      <span class="hero-chip"><span class="dot"></span>Atendimento individual</span>
+      <span class="hero-chip"><span class="dot"></span>Brasil e exterior</span>
+    </div>
   </div>
 </section>
 
-<section class="section container">
-  <h2>Problemas comuns</h2>
+<!-- UNIVERSITIES -->
+<div class="universities">
+  <div class="container">
+    <p>Já atendi alunos de</p>
+    <div class="uni-list">
+      <span class="uni-tag">Cambridge</span>
+      <span class="uni-tag">NYU</span>
+      <span class="uni-tag">ESADE</span>
+      <span class="uni-tag">Politecnico di Milano</span>
+      <span class="uni-tag">Insper</span>
+      <span class="uni-tag">UFABC</span>
+      <span class="uni-tag">PUC-SP</span>
+      <span class="uni-tag">FGV</span>
+      <span class="uni-tag">USP</span>
+    </div>
+  </div>
+</div>
 
-  <div class="cards">
-    <div class="card">Perdido na aula</div>
-    <div class="card">Não consegue aplicar</div>
-    <div class="card">Prova chegando</div>
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-inner">
+      <img
+        src="data:image/jpeg;base64,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"
+        alt="Erick Fernandes – Professor particular de Economia e Estatística"
+        class="about-photo"
+      />
+      <div class="about-text">
+        <p class="section-label">Sobre o professor</p>
+        <h2>Erick <em>Fernandes</em></h2>
+        <p>Graduado em Ciências Econômicas pela PUC-SP, com experiência em Cálculo, Métodos Quantitativos e Programação (Python e R), já ajudei dezenas de universitários a destravar matérias que pareciam impossíveis — de Cambridge a USP. Meu foco é simples: explicar com clareza, ir direto ao ponto e garantir que você saia de cada aula entendendo a lógica, não só decorando fórmula.</p>
+        <div class="about-socials">
+          <a href="https://www.linkedin.com/in/erick-fernandes-790a51b6/" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://instagram.com/efernandes11" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://wa.me/5511951668097" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section container">
-  <h2>Pacotes</h2>
+<!-- PAIN SECTION -->
+<section>
+  <div class="container">
+    <p class="section-label">O problema</p>
+    <h2 class="section-title">Você não é ruim em exatas.<br>Você nunca teve uma boa explicação.</h2>
+    <p class="section-body">Reconhece alguma dessas situações?</p>
 
-  <div class="packages">
-    <div class="package">
-      <h3>4 aulas</h3>
-      <p>Foco em prova</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">😵‍💫</div>
+        <h3>Perdido na aula</h3>
+        <p>O professor avança rápido, você não acompanha, anota sem entender — e na hora da prova vem o branco.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📚</div>
+        <h3>Horas estudando, zero resultado</h3>
+        <p>Você lê o livro, assiste vídeo no YouTube, mas na hora de resolver um exercício diferente, trava.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">😰</div>
+        <h3>Prova chegando e pânico</h3>
+        <p>A semana de provas é terror. Você decora fórmulas sem saber o que está fazendo. O resultado aparece.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🤯</div>
+        <h3>Econometria/Estatística em outro idioma</h3>
+        <p>Heterocedasticidade, autocorrelação, regressão múltipla — parece chinês, mas não precisa ser.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <h3>Cursinho caro, sem resultado</h3>
+        <p>Pagou monitor, comprou material, não adiantou. O problema era a explicação, não o seu esforço.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🎓</div>
+        <h3>Nota que afeta sua carreira</h3>
+        <p>IRA, bolsa, intercâmbio, mercado financeiro — tem muito em jogo. Não dá pra arriscar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD SECTION -->
+<section class="method-section">
+  <div class="container">
+    <p class="section-label">O método</p>
+    <h2 class="section-title">Direto ao ponto.<br>Sem enrolação.</h2>
+    <p class="section-body">Cada aula é construída em cima do que você especificamente não entende. Nada de aula genérica.</p>
+
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Diagnóstico da sua dificuldade</h3>
+          <p>Antes de qualquer coisa, identifico exatamente onde está o buraco — não perco seu tempo revisando o que você já sabe.</p>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Explicação que constrói autonomia</h3>
+          <p>Explico a lógica da matéria do zero, passo a passo, sem pular etapas. Você não vai apenas ver a resolução — vai entender por que cada etapa existe, o que te permite resolver qualquer variação do problema sozinho. O objetivo é que você não precise mais de mim.</p>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Prática com exercícios do seu curso</h3>
+          <p>Trabalho com as provas anteriores da sua faculdade, listas do seu professor e o material que você usa no dia a dia.</p>
+        </div>
+      </div>
+      <div class="method-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Resultado que aparece na prova</h3>
+          <p>Foco total em performance. Você sai de cada aula sabendo resolver — não apenas tendo assistido uma explicação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section>
+  <div class="container">
+    <p class="section-label">Disciplinas</p>
+    <h2 class="section-title">O que eu atendo</h2>
+    <p class="section-body">Matérias que a maioria dos universitários de negócios e sociais aplicadas precisam dominar.</p>
+    <div class="subjects-grid">
+      <span class="subject-chip">Microeconomia</span>
+      <span class="subject-chip">Macroeconomia</span>
+      <span class="subject-chip">Cálculo I e II</span>
+      <span class="subject-chip">Estatística Descritiva</span>
+      <span class="subject-chip">Probabilidade</span>
+      <span class="subject-chip">Inferência Estatística</span>
+      <span class="subject-chip">Econometria</span>
+      <span class="subject-chip">Regressão Linear</span>
+      <span class="subject-chip">Álgebra Linear</span>
+      <span class="subject-chip">Finanças Quantitativas</span>
+      <span class="subject-chip">R e Python básico</span>
+      <span class="subject-chip">Séries Temporais</span>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section">
+  <div class="container">
+    <p class="section-label">Pacotes</p>
+    <h2 class="section-title">Escolha seu pacote</h2>
+    <p class="section-body">Aulas 100% online, com horários sob consulta. Atendimento individual para alunos do Brasil e do exterior.</p>
+
+    <div class="packages-grid">
+
+      <!-- STARTER -->
+      <div class="package-card">
+        <div class="package-lessons">4 <span>aulas</span></div>
+        <div class="package-name">Pacote Foco</div>
+        <ul class="package-perks">
+          <li>Ideal pra se preparar pra uma prova específica</li>
+          <li>Diagnóstico inicial incluso</li>
+          <li>Material de exercícios personalizado</li>
+          <li>Suporte por WhatsApp entre aulas</li>
+        </ul>
+        <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20tenho%20interesse%20no%20Pacote%20Foco%20(4%20aulas)!" class="package-cta" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Conversar sobre esse pacote
+        </a>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="package-card featured">
+        <div class="featured-badge">⚡ Mais escolhido</div>
+        <div class="package-lessons">8 <span>aulas</span></div>
+        <div class="package-name">Pacote Resultado</div>
+        <ul class="package-perks">
+          <li>Dominar um semestre inteiro da disciplina</li>
+          <li>Diagnóstico + plano de aulas personalizado</li>
+          <li>Material e listas de exercícios completas</li>
+          <li>Suporte WhatsApp ilimitado entre aulas</li>
+          <li>Revisão focada pra prova final</li>
+        </ul>
+        <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20tenho%20interesse%20no%20Pacote%20Resultado%20(8%20aulas)!" class="package-cta" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Conversar sobre esse pacote
+        </a>
+      </div>
+
+      <!-- INTENSIVE -->
+      <div class="package-card">
+        <div class="package-lessons">12 <span>aulas</span></div>
+        <div class="package-name">Pacote Domínio</div>
+        <ul class="package-perks">
+          <li>Recuperação completa de uma matéria difícil</li>
+          <li>Acompanhamento durante todo o semestre</li>
+          <li>Material completo + banco de provas antigas</li>
+          <li>Suporte WhatsApp prioritário 7 dias/semana</li>
+          <li>Simulados e correções antes das provas</li>
+        </ul>
+        <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20tenho%20interesse%20no%20Pacote%20Dom%C3%ADnio%20(12%20aulas)!" class="package-cta" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Conversar sobre esse pacote
+        </a>
+      </div>
+
     </div>
 
-    <div class="package">
-      <h3>8 aulas</h3>
-      <p>Acompanhamento</p>
+    <!-- SCARCITY -->
+    <div class="scarcity-banner">
+      <div class="scarcity-icon">🕐</div>
+      <div class="scarcity-text">
+        <h4>Vagas limitadas por semana</h4>
+        <p>Trabalho com poucos alunos por vez para garantir qualidade. Quando as vagas acabam, a fila de espera pode demorar semanas. Se você está precisando agora, não espere.</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="package">
-      <h3>12 aulas</h3>
-      <p>Domínio total</p>
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Pronto pra <em>virar o jogo</em><br>na próxima prova?</h2>
+    <p>Manda uma mensagem agora. Primeira conversa sem compromisso — vejo como posso te ajudar.</p>
+    <div class="final-cta-actions">
+      <a href="https://wa.me/5511951668097?text=Ol%C3%A1%20Erick%2C%20quero%20saber%20mais%20sobre%20as%20aulas%20particulares!" class="btn-wpp pulse" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Falar com Erick no WhatsApp
+      </a>
+      <p class="hero-scarcity">Apenas 6 vagas disponíveis essa semana</p>
     </div>
   </div>
 </section>
 
 <footer>
-  © Erick Fernandes
+  <div class="footer-inner">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/erick-fernandes-790a51b6/" class="footer-social" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://instagram.com/efernandes11" class="footer-social" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        Instagram
+      </a>
+      <a href="https://wa.me/5511951668097" class="footer-social" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.07a.75.75 0 0 0 .932.898l5.437-1.66A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.942 0-3.75-.498-5.322-1.369l-.38-.215-3.934 1.2 1.17-3.83-.237-.392A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <p>© 2025 Erick Fernandes · Aulas particulares 100% online · Brasil e exterior</p>
+  </div>
 </footer>
 
 </body>
